@@ -1,0 +1,511 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <table border="1" cellpadding="10">
+        <thead>
+            <tr>
+                <th>№</th>
+                <th>Guruh</th>
+                <th>Umumiy talabalar</th>
+                <th>Erkak talabalar</th>
+                <th>Ayol talabalar</th>
+            </tr>
+        </thead>
+        <tbody id="jadval_html"></tbody>
+    </table>
+
+
+    <script>
+        const talabalar = [{
+                "id": 1,
+                "ism": "Eldor",
+                "familya": "Mamatov",
+                "yosh": 20,
+                "jins_id": 1,
+                "guruh_id": 1
+            },
+            {
+                "id": 2,
+                "ism": "Barno",
+                "familya": "Ismoilova",
+                "yosh": 18,
+                "jins_id": 2,
+                "guruh_id": 2
+            },
+            {
+                "id": 3,
+                "ism": "Rustam",
+                "familya": "Ochilov",
+                "yosh": 22,
+                "jins_id": 1,
+                "guruh_id": 3
+            },
+            {
+                "id": 4,
+                "ism": "Shahlo",
+                "familya": "Nazarova",
+                "yosh": 23,
+                "jins_id": 2,
+                "guruh_id": 4
+            },
+            {
+                "id": 5,
+                "ism": "Behruz",
+                "familya": "Ismoilov",
+                "yosh": 18,
+                "jins_id": 1,
+                "guruh_id": 5
+            },
+            {
+                "id": 6,
+                "ism": "Maftuna",
+                "familya": "Sattorova",
+                "yosh": 22,
+                "jins_id": 2,
+                "guruh_id": 6
+            },
+            {
+                "id": 7,
+                "ism": "Akmal",
+                "familya": "Sobirov",
+                "yosh": 18,
+                "jins_id": 1,
+                "guruh_id": 7
+            },
+            {
+                "id": 8,
+                "ism": "Abbos",
+                "familya": "Xolmatov",
+                "yosh": 22,
+                "jins_id": 1,
+                "guruh_id": 8
+            },
+            {
+                "id": 9,
+                "ism": "Zilola",
+                "familya": "Tursunova",
+                "yosh": 19,
+                "jins_id": 2,
+                "guruh_id": 9
+            },
+            {
+                "id": 10,
+                "ism": "Nigora",
+                "familya": "Abdullayeva",
+                "yosh": 21,
+                "jins_id": 2,
+                "guruh_id": 10
+            },
+            {
+                "id": 11,
+                "ism": "Odina",
+                "familya": "Jurayeva",
+                "yosh": 23,
+                "jins_id": 2,
+                "guruh_id": 1
+            },
+            {
+                "id": 12,
+                "ism": "Lola",
+                "familya": "Saidova",
+                "yosh": 22,
+                "jins_id": 2,
+                "guruh_id": 2
+            },
+            {
+                "id": 13,
+                "ism": "Sevara",
+                "familya": "Yusupova",
+                "yosh": 21,
+                "jins_id": 2,
+                "guruh_id": 3
+            },
+            {
+                "id": 14,
+                "ism": "Sherzod",
+                "familya": "Qodirov",
+                "yosh": 20,
+                "jins_id": 1,
+                "guruh_id": 4
+            },
+            {
+                "id": 15,
+                "ism": "Aziz",
+                "familya": "Karimov",
+                "yosh": 21,
+                "jins_id": 1,
+                "guruh_id": 5
+            },
+            {
+                "id": 16,
+                "ism": "Shirin",
+                "familya": "Boboyeva",
+                "yosh": 22,
+                "jins_id": 2,
+                "guruh_id": 6
+            },
+            {
+                "id": 17,
+                "ism": "Sanjar",
+                "familya": "Qosimov",
+                "yosh": 21,
+                "jins_id": 1,
+                "guruh_id": 7
+            },
+            {
+                "id": 18,
+                "ism": "Ulug'bek",
+                "familya": "Mirzayev",
+                "yosh": 20,
+                "jins_id": 1,
+                "guruh_id": 8
+            },
+            {
+                "id": 19,
+                "ism": "Temur",
+                "familya": "Boboyev",
+                "yosh": 20,
+                "jins_id": 1,
+                "guruh_id": 9
+            },
+            {
+                "id": 20,
+                "ism": "Iroda",
+                "familya": "Aliyeva",
+                "yosh": 19,
+                "jins_id": 2,
+                "guruh_id": 10
+            },
+            {
+                "id": 21,
+                "ism": "Hilola",
+                "familya": "Ro'ziyeva",
+                "yosh": 19,
+                "jins_id": 2,
+                "guruh_id": 1
+            },
+            {
+                "id": 22,
+                "ism": "Bobur",
+                "familya": "Ro'ziyev",
+                "yosh": 23,
+                "jins_id": 1,
+                "guruh_id": 2
+            },
+            {
+                "id": 23,
+                "ism": "Nilufar",
+                "familya": "Mamatova",
+                "yosh": 19,
+                "jins_id": 2,
+                "guruh_id": 3
+            },
+            {
+                "id": 24,
+                "ism": "Javohir",
+                "familya": "Ergashev",
+                "yosh": 18,
+                "jins_id": 1,
+                "guruh_id": 4
+            },
+            {
+                "id": 25,
+                "ism": "Sabina",
+                "familya": "Ochilova",
+                "yosh": 22,
+                "jins_id": 2,
+                "guruh_id": 5
+            },
+            {
+                "id": 26,
+                "ism": "Nodir",
+                "familya": "Aliyev",
+                "yosh": 20,
+                "jins_id": 1,
+                "guruh_id": 6
+            },
+            {
+                "id": 27,
+                "ism": "Feruza",
+                "familya": "Qodirova",
+                "yosh": 22,
+                "jins_id": 2,
+                "guruh_id": 7
+            },
+            {
+                "id": 28,
+                "ism": "Jasur",
+                "familya": "Rahimov",
+                "yosh": 21,
+                "jins_id": 1,
+                "guruh_id": 8
+            },
+            {
+                "id": 29,
+                "ism": "Zarina",
+                "familya": "Normatova",
+                "yosh": 20,
+                "jins_id": 2,
+                "guruh_id": 9
+            },
+            {
+                "id": 30,
+                "ism": "Humoyun",
+                "familya": "Jurayev",
+                "yosh": 23,
+                "jins_id": 1,
+                "guruh_id": 10
+            },
+            {
+                "id": 31,
+                "ism": "Munisa",
+                "familya": "Sobirova",
+                "yosh": 21,
+                "jins_id": 2,
+                "guruh_id": 1
+            },
+            {
+                "id": 32,
+                "ism": "Islom",
+                "familya": "Normatov",
+                "yosh": 20,
+                "jins_id": 1,
+                "guruh_id": 2
+            },
+            {
+                "id": 33,
+                "ism": "Durdona",
+                "familya": "Qosimova",
+                "yosh": 22,
+                "jins_id": 2,
+                "guruh_id": 3
+            },
+            {
+                "id": 34,
+                "ism": "Dilnoza",
+                "familya": "Rahimova",
+                "yosh": 18,
+                "jins_id": 2,
+                "guruh_id": 4
+            },
+            {
+                "id": 35,
+                "ism": "Malika",
+                "familya": "Usmonova",
+                "yosh": 18,
+                "jins_id": 2,
+                "guruh_id": 5
+            },
+            {
+                "id": 36,
+                "ism": "Otabek",
+                "familya": "Yusupov",
+                "yosh": 22,
+                "jins_id": 1,
+                "guruh_id": 6
+            },
+            {
+                "id": 37,
+                "ism": "Sardor",
+                "familya": "Usmonov",
+                "yosh": 21,
+                "jins_id": 1,
+                "guruh_id": 7
+            },
+            {
+                "id": 38,
+                "ism": "Farhod",
+                "familya": "Saidov",
+                "yosh": 19,
+                "jins_id": 1,
+                "guruh_id": 8
+            },
+            {
+                "id": 39,
+                "ism": "Gulnora",
+                "familya": "Ergasheva",
+                "yosh": 20,
+                "jins_id": 2,
+                "guruh_id": 9
+            },
+            {
+                "id": 40,
+                "ism": "Yulduz",
+                "familya": "Tojiyeva",
+                "yosh": 19,
+                "jins_id": 2,
+                "guruh_id": 10
+            },
+            {
+                "id": 41,
+                "ism": "Kamola",
+                "familya": "Mirzayeva",
+                "yosh": 21,
+                "jins_id": 2,
+                "guruh_id": 1
+            },
+            {
+                "id": 42,
+                "ism": "Anvar",
+                "familya": "Sattorov",
+                "yosh": 21,
+                "jins_id": 1,
+                "guruh_id": 2
+            },
+            {
+                "id": 43,
+                "ism": "Shohruh",
+                "familya": "Nazarov",
+                "yosh": 18,
+                "jins_id": 1,
+                "guruh_id": 3
+            },
+            {
+                "id": 44,
+                "ism": "Nodira",
+                "familya": "Hamidova",
+                "yosh": 23,
+                "jins_id": 2,
+                "guruh_id": 4
+            },
+            {
+                "id": 45,
+                "ism": "Dilshod",
+                "familya": "Abdullayev",
+                "yosh": 18,
+                "jins_id": 1,
+                "guruh_id": 5
+            },
+            {
+                "id": 46,
+                "ism": "Bekzod",
+                "familya": "Tursunov",
+                "yosh": 22,
+                "jins_id": 1,
+                "guruh_id": 6
+            },
+            {
+                "id": 47,
+                "ism": "Mohira",
+                "familya": "Xolmatova",
+                "yosh": 22,
+                "jins_id": 2,
+                "guruh_id": 7
+            },
+            {
+                "id": 48,
+                "ism": "Madina",
+                "familya": "Karimova",
+                "yosh": 20,
+                "jins_id": 2,
+                "guruh_id": 8
+            },
+            {
+                "id": 49,
+                "ism": "Doniyor",
+                "familya": "Hamidov",
+                "yosh": 20,
+                "jins_id": 1,
+                "guruh_id": 9
+            },
+            {
+                "id": 50,
+                "ism": "Muhammad",
+                "familya": "Tojiyev",
+                "yosh": 23,
+                "jins_id": 1,
+                "guruh_id": 10
+            }
+        ]
+        const jinslar=[
+  {
+    "id": 1,
+    "nomi": "Erkak"
+  },
+  {
+    "id": 2,
+    "nomi": "Ayol"
+  }
+]
+        const guruhlar =[
+  {
+    "id": 1,
+    "nomi": "DI-101"
+  },
+  {
+    "id": 2,
+    "nomi": "DI-102"
+  },
+  {
+    "id": 3,
+    "nomi": "DI-103"
+  },
+  {
+    "id": 4,
+    "nomi": "IT-201"
+  },
+  {
+    "id": 5,
+    "nomi": "IT-202"
+  },
+  {
+    "id": 6,
+    "nomi": "IT-203"
+  },
+  {
+    "id": 7,
+    "nomi": "MN-301"
+  },
+  {
+    "id": 8,
+    "nomi": "MN-302"
+  },
+  {
+    "id": 9,
+    "nomi": "IQ-401"
+  },
+  {
+    "id": 10,
+    "nomi": "IQ-402"
+  }
+]
+
+        let erkaklar=0
+        let ayollar=0
+        let table=document.getElementById('jadval_html')
+        for(let i=0;i<guruhlar.length;i++){
+            for(let j=0;j<talabalar.length;j++){
+                if(talabalar[j].guruh_id==guruhlar[i].id){
+                    if(talabalar[j].jins_id==1){
+                        erkaklar++
+                    }else{
+                        ayollar++
+                    }
+                }
+            }
+            table.innerHTML +=`
+                <tr>
+                    <th>${i+1}</th>
+                    <th>${guruhlar[i].nomi}</th>
+                    <th>${erkaklar+ayollar}</th>
+                    <th>${erkaklar}</th>
+                    <th>${ayollar}</th>
+                </tr>
+            
+            `
+            ayollar=0
+            erkaklar=0
+        }
+    </script>
+</body>
+
+</html>
